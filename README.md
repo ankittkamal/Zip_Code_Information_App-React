@@ -1,6 +1,6 @@
 ## ReactEats - Food Delivering Webapp
 
-### Deployment on vercel:
+### Deployment on vercel: https://zip-code-information-app-react.vercel.app/
 
 ### Technologies Used
 
