@@ -20,7 +20,7 @@
 
 - Location Data from Zip code with light mode
 
-     <img src="public/img/WithLocationData.png">
+     <img src="public/img/LocationData.png">
 
 ---
 
