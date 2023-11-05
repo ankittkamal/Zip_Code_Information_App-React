@@ -15,10 +15,8 @@ function App() {
   return (
     <div className="h-screen flex flex-col justify-between bg-gradient-to-t from-gray-50 to-gray-900 dark:from-black dark:to-gray-50 text-gray-950 dark:text-gray-50 dark:text-opacity-90">
       <Header />
-
       <Body />
       <Footer />
-
       <ThemeSwitch />
     </div>
   );

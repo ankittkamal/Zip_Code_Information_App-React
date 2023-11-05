@@ -1,4 +1,4 @@
-## ReactEats - Food Delivering Webapp
+## Zip Code Information App
 
 ### Deployment on vercel: https://zip-code-information-app-react.vercel.app/
 
