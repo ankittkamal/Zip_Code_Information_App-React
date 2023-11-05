@@ -5,8 +5,8 @@ const darkModeSlice = createSlice({
   initialState: "light", // Initial state is light mode
   reducers: {
     toggleTheme: (state) => (state === "light" ? "dark" : "light"),
-    setDarkMode: (state) => (state.darkMode = "dark"),
-    setMode: (state) => (state === "dark" ? "dark" : "light"),
+    setDarkMode: (state) => "dark", // Directly set to "dark"
+    setMode: (state, action) => action.payload, // Directly assign the localTheme value to the state
   },
 });
 

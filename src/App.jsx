@@ -12,6 +12,19 @@ import {
 } from "./components/utils/locationSlice";
 
 function App() {
+  return (
+    <div className="h-screen flex flex-col justify-between bg-gradient-to-t from-gray-50 to-gray-900 dark:from-black dark:to-gray-50 text-gray-950 dark:text-gray-50 dark:text-opacity-90">
+      <Header />
+
+      <Body />
+      <Footer />
+
+      <ThemeSwitch />
+    </div>
+  );
+}
+
+function Body() {
   const dispatch = useDispatch();
   const locationData = useSelector((state) => state.location.data);
   const [loading, setLoading] = useState(false);
@@ -48,31 +61,23 @@ function App() {
   const clearData = () => {
     dispatch(clearLocationData());
   };
-
   return (
-    <>
-      {" "}
-      <Header /> <ThemeSwitch />
-      <div className="h-screen bg-gradient-to-b from-gray-50 to-gray-900 dark:from-black dark:to-gray-50 text-gray-950 dark:text-gray-50 dark:text-opacity-90 grid grid-cols-2 justify-center">
-        <div className="flex flex-col mt-8 items-center p-4 space-y-4 grid-cols-1 ">
-          <InputPostalCode onSubmit={fetchData} t />
-          {loading && (
-            <div className="text-5xl text-gray-800 absolute inset-0 flex items-center justify-center bg-slate-200/20 backdrop-blur-sm">
-              <ImSpinner3 className="animate-spin dark:text-white" />
-            </div>
-          )}
-          {error && (
-            <p className="text-xl text-red-600 font-medium">Error: {error}</p>
-          )}
-        </div>
-        <div className="grid-cols-1  mt-8 items-center p-4 space-y-4 mx-36 ">
-          <LocationData data={locationData} clearData={clearData} />
-        </div>
+    <div className="h-screen bg-gradient-to-t from-gray-50 to-slate-400 dark:from-gray-300 dark:to-black text-gray-950 dark:text-gray-50 dark:text-opacity-90 grid grid-cols-2 justify-center">
+      <div className="flex flex-col mt-8 items-center p-4 space-y-4 grid-cols-1 ">
+        <InputPostalCode onSubmit={fetchData} clearData={clearData} />
+        {loading && (
+          <div className="text-5xl text-gray-800 absolute inset-0 flex items-center justify-center bg-slate-200/20 backdrop-blur-sm">
+            <ImSpinner3 className="animate-spin dark:text-white" />
+          </div>
+        )}
+        {error && (
+          <p className="text-xl text-red-600 font-medium">Error: {error}</p>
+        )}
       </div>
-      <div className="h-screen bg-gradient-to-t from-gray-50 to-gray-900 dark:from-black dark:to-gray-50 text-gray-950 dark:text-gray-50 dark:text-opacity-90  justify-center">
-        <Footer />
+      <div className="grid-cols-1  mt-8 items-center p-4 space-y-4 mx-28 overflow-y-auto">
+        <LocationData data={locationData} />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -98,9 +103,10 @@ function Header() {
     </div>
   );
 }
+
 export const Footer = () => {
   return (
-    <div className="flex mob:flex-col justify-around w-full shadow h-14 bg-yellow text-blue-dark text-center leading-[3.5rem] bottom-0  z-40 bg-blue-50 ">
+    <div className="  flex mob:flex-col justify-around w-full shadow h-14 bg-yellow text-blue-dark text-center leading-[3.5rem] bottom-0  z-40 bg-blue-50 dark:bg-black dark:text-gray-200 ">
       <span className="text-left mob:text-xs mob:text-center">
         Zip Code Information App <span className="text-red">&#169;</span> 2023
       </span>

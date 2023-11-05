@@ -1,8 +1,39 @@
-# React + Vite
+## ReactEats - Food Delivering Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Deployment on vercel:
 
-Currently, two official plugins are available:
+### Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Front-end:
+  `React + Vite`
+  `Redux`
+  `Tailwind CSS`
+  `JavaScript`
+
+- API Integration : `zippopotam.us`
+
+### Screenshot
+
+- Form for entering the ZIP code with dark mode
+
+    <img src="public/img/DisplayForm.png">
+
+- Location Data from Zip code with light mode
+
+     <img src="public/img/WithLocationData.png">
+
+---
+
+## Setup the project
+
+1. Fork the project
+2. Clone project
+3. Install dependencies `npm install`
+4. To run the server execute `npm run dev`
+
+---
+
+### Implemented a Redux store to manage the application's state.
+
+1. Location Data -> is stored and managed by redux store.
+2. Dark Mode feature is implemented using redux store.
